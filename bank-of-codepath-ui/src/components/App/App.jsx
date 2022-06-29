@@ -6,7 +6,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TransactionDetail from "../TransactionDetail/TransactionDetail";
 
-export default function App() {
+export default function App(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [transactions, setTransactions] = useState([]);
   const [transfers, setTransfers] = useState([]);
