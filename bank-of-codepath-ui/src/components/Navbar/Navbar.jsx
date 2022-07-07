@@ -2,21 +2,23 @@ import * as React from "react";
 import FilterInput from "../FilterInput/FilterInput";
 import codepath from "../../assets/codepath.svg";
 import avatar from "../../assets/avatar.png";
-import "./Navbar.css";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-export default function Navbar({ filterInputValue, setFilterInputValue }) {
+export default function Navbar(props) {
   const handleOnInputChange = (change) => {
-    setFilterInputValue(change.target.value);
+    props.setFilterInputValue(change.target.value);
   };
 
   return (
     <nav className="navbar">
-      <Logo path={"/"} />
+      <Logo path="/" />
+
+      {/* <a className="logo">Logo</a> */}
 
       <div className="search">
         <FilterInput
-          inputValue={filterInputValue}
+          inputValue={props.filterInputValue}
           handleOnChange={handleOnInputChange}
         />
       </div>
